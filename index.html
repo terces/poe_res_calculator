@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+	<!--RWD-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	body {
+		display: flex;
+		min-height: 100vh;
+		flex-direction: column;
+		background-color: #e0e0e0;
+	}
+	main {
+		flex: 1 0 auto;
+	}
+	.page-footer {
+		background-color: #1b5e20;
+	}
+	</style>
+	<title>The Volatile Abyss - ES Calculator</title>
+</head>
+<body>
+
+<nav class="teal darken-3" role="navigation">
+	<div class="nav-wrapper container">
+		<a id="logo-container" href="#" class="brand-logo">The Volatile Abyss</a>
+		<ul class="right hide-on-med-and-down">
+			<li><a href="http://www.bsql.com.tw" target="_blank">Twitch</a></li>
+		</ul>
+		<ul id="nav-mobile" class="side-nav">
+			<li><a href="http://www.bsql.com.tw" target="_blank">Twitch</a></li>
+		</ul>
+		<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+	</div>
+</nav>
+
+<main>
+<div class="section no-pad-bot" id="index-banner">
+	<div class="container">
+		<h3 class="header center blue-grey-text">Equipment resistance calculator</h3>
+		<div class="section">
+			<div class="row">
+				<div class="col m12 l8">
+					<ul class="collapsible popout" data-collapsible="accordion">
+						<li>
+							<div class="collapsible-header">
+							<span class="badge purple">42%</span>
+							<span class="badge yellow">36%</span>
+							<span class="badge blue">24%</span>
+							<span class="badge red">36%</span>
+							Helmet
+							</div>
+							<div class="collapsible-body">
+								<div class="input-field">
+								<input id="hel-fire" type="text" name="hel-fire" />
+								<label for="hel-fire">Fire Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-cold" type="text" name="hel-cold" />
+								<label for="hel-cold">Cold Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-light" type="text" name="hel-fire" />
+								<label for="hel-light">Lightning Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-chaos" type="text" name="hel-chaos" />
+								<label for="hel-chaos">Chaos Resistance</label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">Body</div>
+							<div class="collapsible-body">
+								<div class="input-field">
+								<input id="hel-fire" type="text" name="hel-fire" />
+								<label for="hel-fire">Fire Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-cold" type="text" name="hel-cold" />
+								<label for="hel-cold">Cold Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-light" type="text" name="hel-fire" />
+								<label for="hel-light">Lightning Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-chaos" type="text" name="hel-chaos" />
+								<label for="hel-chaos">Chaos Resistance</label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">Gloves</div>
+							<div class="collapsible-body">
+								<div class="input-field">
+								<input id="hel-fire" type="text" name="hel-fire" />
+								<label for="hel-fire">Fire Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-cold" type="text" name="hel-cold" />
+								<label for="hel-cold">Cold Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-light" type="text" name="hel-fire" />
+								<label for="hel-light">Lightning Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-chaos" type="text" name="hel-chaos" />
+								<label for="hel-chaos">Chaos Resistance</label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">Boots</div>
+							<div class="collapsible-body">
+								<div class="input-field">
+								<input id="hel-fire" type="text" name="hel-fire" />
+								<label for="hel-fire">Fire Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-cold" type="text" name="hel-cold" />
+								<label for="hel-cold">Cold Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-light" type="text" name="hel-fire" />
+								<label for="hel-light">Lightning Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-chaos" type="text" name="hel-chaos" />
+								<label for="hel-chaos">Chaos Resistance</label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">Amulet</div>
+							<div class="collapsible-body">
+								<input type="text" name="hel-fire" />
+								<input type="text" name="hel-cold" />
+								<input type="text" name="hel-ligh" />
+								<input type="text" name="hel-chao" />
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">Ring(Left)</div>
+							<div class="collapsible-body">
+								<div class="input-field">
+								<input id="hel-fire" type="text" name="hel-fire" />
+								<label for="hel-fire">Fire Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-cold" type="text" name="hel-cold" />
+								<label for="hel-cold">Cold Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-light" type="text" name="hel-fire" />
+								<label for="hel-light">Lightning Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-chaos" type="text" name="hel-chaos" />
+								<label for="hel-chaos">Chaos Resistance</label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">Ring(Right)</div>
+							<div class="collapsible-body">
+								<div class="input-field">
+								<input id="hel-fire" type="text" name="hel-fire" />
+								<label for="hel-fire">Fire Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-cold" type="text" name="hel-cold" />
+								<label for="hel-cold">Cold Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-light" type="text" name="hel-fire" />
+								<label for="hel-light">Lightning Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-chaos" type="text" name="hel-chaos" />
+								<label for="hel-chaos">Chaos Resistance</label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">Main Hand</div>
+							<div class="collapsible-body">
+								<div class="input-field">
+								<input id="hel-fire" type="text" name="hel-fire" />
+								<label for="hel-fire">Fire Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-cold" type="text" name="hel-cold" />
+								<label for="hel-cold">Cold Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-light" type="text" name="hel-fire" />
+								<label for="hel-light">Lightning Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-chaos" type="text" name="hel-chaos" />
+								<label for="hel-chaos">Chaos Resistance</label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">Off Hand</div>
+							<div class="collapsible-body">
+								<div class="input-field">
+								<input id="hel-fire" type="text" name="hel-fire" />
+								<label for="hel-fire">Fire Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-cold" type="text" name="hel-cold" />
+								<label for="hel-cold">Cold Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-light" type="text" name="hel-fire" />
+								<label for="hel-light">Lightning Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="hel-chaos" type="text" name="hel-chaos" />
+								<label for="hel-chaos">Chaos Resistance</label>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="col m12 l4">
+					<ul class="collection">
+						<li class="collection-item">
+							<div class="input-field">
+								<input id="bandit" name="bandit_10" type="checkbox" />
+								<label for="bandit">Bandit +10% All Res.</label>
+							</div>
+						</li>
+						<li class="collection-item">Passives</li>
+						<li class="collection-item">Original</li>
+						<li class="collection-item">Merciless</li>
+						<li class="collection-item">
+							<div class="input-field">
+								<input id="curse_lvl" type="number" min="0" max="30" value="15"/>
+								<label for="curse_lvl">Elemental Weakness</label>
+							</div>
+						</li>
+					</ul>
+					<div class="input-field">
+						<input id="character_url" type="text" name="ch_url" />
+						<label for="character_url">Apply your Character</label>
+					</div>
+					<div class="input-field">
+						<input id="passive_url" type="text" name="sk_url" />
+						<label for="passive_url">Apply existed Passive tree</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</main>
+
+<footer class="page-footer">
+	<!--
+	<div class="container">
+		<div class="row">
+			<h5 class="white-text right-align">The Volatile Abyss</h5>
+		</div>
+	</div>
+	-->
+	<div class="footer-copyright">
+		<div class="container">
+		Since 2017
+		<a class="grey-text text-lighten-4 right" href="https://github.com/terces/">Contact me</a>
+		</div>
+	</div>
+</footer>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+<script>
+	// for material compoment
+	$(document).ready( function() {
+		$('.collapsible').collapsible();
+	});
+</script>
+<!--
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-96931167-1', 'auto');
+ga('send', 'pageview');
+</script>
+-->
+</body>
+</html>
