@@ -23,7 +23,7 @@
 	span.badge {
 		color: #ffffff;
 	}
-	label[for="bandit"] {
+	label[for="bandit"],label[for="curse_lvl"] {
 		color: black;
 	}
 	</style>
@@ -300,12 +300,10 @@
 				<div class="col m12 l5">
 					<ul class="collection">
 						<li class="collection-item">
-							<div class="input-field">
-								<input id="bandit" name="bandit_10" type="checkbox" />
-								<label for="bandit">Bandit Reward: +10% All Res.</label>
-							</div>
+							<input id="bandit" name="bandit_10" type="checkbox" />
+							<label for="bandit">Bandit Reward: +10% All Res.</label>
 						</li>
-						<li class="collection-item">Passives</li>
+						<li class="collection-item" style="display: none">Passives</li>
 						<li class="collection-item">
 							Original
 							<span id="total_chaos" class="badge purple">0%</span>
@@ -331,11 +329,11 @@
 							</div>
 						</li>
 					</ul>
-					<div class="input-field">
+					<div class="input-field" style="display: none">
 						<input id="character_url" type="text" name="ch_url" />
 						<label for="character_url">Apply your Character</label>
 					</div>
-					<div class="input-field">
+					<div class="input-field" style="display: none">
 						<input id="passive_url" type="text" name="sk_url" />
 						<label for="passive_url">Apply existed Passive tree</label>
 					</div>
