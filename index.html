@@ -400,9 +400,11 @@
 			res_total[res] += Number( cur.value);
 		}
 		for( var i = 0; i < 4; ++i) {
-			document.querySelector( '#total_' + ress[i]).innerHTML = (b10 ? (res_total[ress[i]] + 10).toString() : res_total[ress[i]].toString()) + "%";
-			document.querySelector( '#merci_' + ress[i]).innerHTML = (b10 ? (res_total[ress[i]] + 10 - 60).toString() : (res_total[ress[i]] - 60).toString()) + "%";
-			document.querySelector( '#elew_' + ress[i]).innerHTML = (b10 ? (res_total[ress[i]] + 10 - 60 - ( 19 + elew)).toString() : (res_total[ress[i]] - 60 - ( 19 + elew)).toString()) + "%";
+			document.querySelector( '#total_' + ress[i]).innerHTML = (b10 & ress[i] != "chaos" ? (res_total[ress[i]] + 10).toString() : res_total[ress[i]].toString()) + "%";
+			document.querySelector( '#merci_' + ress[i]).innerHTML = ( Number( document.querySelector( '#total_' + ress[i]).innerHTML.split('%')[0]) - 60).toString() + "%";
+			document.querySelector( '#elew_' + ress[i]).innerHTML = ress[i] != "chaos" ?
+				( Number( document.querySelector( '#merci_' + ress[i]).innerHTML.split('%')[0]) - ( 19 + elew)).toString() + "%" :
+				( Number( document.querySelector( '#merci_' + ress[i]).innerHTML.split('%')[0])).toString() + "%";
 		}
 
 		return ;
