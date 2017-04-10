@@ -47,7 +47,7 @@
 		<h3 class="header center blue-grey-text">Equipment resistance calculator</h3>
 		<div class="section">
 			<div class="row">
-				<div class="col m12 l8">
+				<div class="col m12 l7">
 					<ul class="collapsible popout" data-collapsible="accordion">
 						<li>
 							<div class="collapsible-header">
@@ -294,7 +294,7 @@
 						</li>
 					</ul>
 				</div>
-				<div class="col m12 l4">
+				<div class="col m12 l5">
 					<ul class="collection">
 						<li class="collection-item">
 							<div class="input-field">
@@ -305,12 +305,24 @@
 						<li class="collection-item">Passives</li>
 						<li class="collection-item">
 							Original
-							<div class="input-field">
-							</div>
+							<span id="total_chaos" class="badge purple">0%</span>
+							<span id="total_light" class="badge yellow">0%</span>
+							<span id="total_cold" class="badge blue">0%</span>
+							<span id="total_fire" class="badge red">0%</span>
 						</li>
-						<li class="collection-item">Merciless</li>
+						<li class="collection-item">
+							Merciless
+							<span id="merci_chaos" class="badge purple">-60%</span>
+							<span id="merci_light" class="badge yellow">-60%</span>
+							<span id="merci_cold" class="badge blue">-60%</span>
+							<span id="merci_fire" class="badge red">-60%</span>
+						</li>
 						<li class="collection-item">
 							<div class="input-field">
+								<span id="elew_chaos" class="badge purple">-60%</span>
+								<span id="elew_light" class="badge yellow">-60%</span>
+								<span id="elew_cold" class="badge blue">-60%</span>
+								<span id="elew_fire" class="badge red">-60%</span>
 								<input id="curse_lvl" type="number" min="0" max="30" value="15"/>
 								<label for="curse_lvl">Elemental Weakness</label>
 							</div>
@@ -358,6 +370,7 @@
 <script>
 	// global res
 	var color_map = { 'chaos':'purple', 'light':'yellow', 'cold':'blue', 'fire':'red'};
+	var res_total = { 'fire': 0, 'cold': 0, 'light': 0, 'chaos': 0};
 
 	function bind_res_to_header( base, res) {
 		
@@ -373,18 +386,49 @@
 			badge.style.display = "none"
 	};
 
+	function update_res() {
+		var ipt_ress = document.querySelectorAll( 'input[name$="-fire"],input[name$="-cold"],input[name$="-light"],input[name$="chaos"]');
+		var l = ipt_ress.length;
+		var b10 = document.querySelector('#bandit').checked;
+		var elew = Number( document.querySelector('#curse_lvl').value);
+		var ress = [ 'fire', 'cold', 'light', 'chaos'];
+
+		res_total.fire = res_total.cold = res_total.light = res_total.chaos = 0;
+		for( var i = 0; i < l; ++i) {
+			var cur = ipt_ress[i];
+			var res = cur.id.split('-')[1];
+			res_total[res] += Number( cur.value);
+		}
+		for( var i = 0; i < 4; ++i) {
+			document.querySelector( '#total_' + ress[i]).innerHTML = (b10 ? (res_total[ress[i]] + 10).toString() : res_total[ress[i]].toString()) + "%";
+			document.querySelector( '#merci_' + ress[i]).innerHTML = (b10 ? (res_total[ress[i]] + 10 - 60).toString() : (res_total[ress[i]] - 60).toString()) + "%";
+			document.querySelector( '#elew_' + ress[i]).innerHTML = (b10 ? (res_total[ress[i]] + 10 - 60 - ( 19 + elew)).toString() : (res_total[ress[i]] - 60 - ( 19 + elew)).toString()) + "%";
+		}
+
+		return ;
+	}
+
 	var ipt_ress = document.querySelectorAll( 'input[name$="-fire"],input[name$="-cold"],input[name$="-light"],input[name$="chaos"]');
 	var l = ipt_ress.length;
 	for( var i = 0; i < l; ++i) {
 		ipt_ress[i].oninput = function( e) {
-			bind_res_to_header( e.target.id.split('-')[0], e.target.id.split('-')[1]);
+			var base = e.target.id.split('-')[0];
+			var res = e.target.id.split('-')[1];
+			bind_res_to_header( base, res);
+			update_res();
 		};
 	}
-	var badge = document.querySelectorAll( '.badge');
+	var badge = document.querySelectorAll( 'div.collapsible-header span.badge');
 	l = badge.length;
 	for( var i = 0; i < l; ++i)
 		badge[i].style.display = "none";
 
+	var b10 = document.querySelector('#bandit');
+	b10.onchange = update_res;
+	var elew = document.querySelector('#curse_lvl');
+	elew.oninput= update_res;
+
+	update_res();
 </script>
 <!--
 <script>
