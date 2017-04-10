@@ -20,8 +20,11 @@
 	.page-footer {
 		background-color: #1b5e20;
 	}
+	span.badge {
+		color: #ffffff;
+	}
 	</style>
-	<title>The Volatile Abyss - ES Calculator</title>
+	<title>The Volatile Abyss - Resistance Calculator</title>
 </head>
 <body>
 
@@ -48,184 +51,244 @@
 					<ul class="collapsible popout" data-collapsible="accordion">
 						<li>
 							<div class="collapsible-header">
-							<span class="badge purple">42%</span>
-							<span class="badge yellow">36%</span>
-							<span class="badge blue">24%</span>
-							<span class="badge red">36%</span>
-							Helmet
+								<span class="badge purple"></span>
+								<span class="badge yellow"></span>
+								<span class="badge blue"></span>
+								<span class="badge red"></span>
+								Helmet
 							</div>
 							<div class="collapsible-body">
 								<div class="input-field">
-								<input id="hel-fire" type="text" name="hel-fire" />
-								<label for="hel-fire">Fire Resistance</label>
+								<input id="helmet-fire" type="number" name="helmet-fire" />
+								<label for="helmet-fire">Fire Resistance</label>
 								</div>
 								<div class="input-field">
-								<input id="hel-cold" type="text" name="hel-cold" />
-								<label for="hel-cold">Cold Resistance</label>
+								<input id="helmet-cold" type="number" name="helmet-cold" />
+								<label for="helmet-cold">Cold Resistance</label>
 								</div>
 								<div class="input-field">
-								<input id="hel-light" type="text" name="hel-fire" />
-								<label for="hel-light">Lightning Resistance</label>
+								<input id="helmet-light" type="number" name="helmet-light" />
+								<label for="helmet-light">Lightning Resistance</label>
 								</div>
 								<div class="input-field">
-								<input id="hel-chaos" type="text" name="hel-chaos" />
-								<label for="hel-chaos">Chaos Resistance</label>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="collapsible-header">Body</div>
-							<div class="collapsible-body">
-								<div class="input-field">
-								<input id="hel-fire" type="text" name="hel-fire" />
-								<label for="hel-fire">Fire Resistance</label>
-								</div>
-								<div class="input-field">
-								<input id="hel-cold" type="text" name="hel-cold" />
-								<label for="hel-cold">Cold Resistance</label>
-								</div>
-								<div class="input-field">
-								<input id="hel-light" type="text" name="hel-fire" />
-								<label for="hel-light">Lightning Resistance</label>
-								</div>
-								<div class="input-field">
-								<input id="hel-chaos" type="text" name="hel-chaos" />
-								<label for="hel-chaos">Chaos Resistance</label>
+								<input id="helmet-chaos" type="number" name="helmet-chaos" />
+								<label for="helmet-chaos">Chaos Resistance</label>
 								</div>
 							</div>
 						</li>
 						<li>
-							<div class="collapsible-header">Gloves</div>
+							<div class="collapsible-header">
+								<span class="badge purple"></span>
+								<span class="badge yellow"></span>
+								<span class="badge blue"></span>
+								<span class="badge red"></span>
+								Body
+							</div>
 							<div class="collapsible-body">
 								<div class="input-field">
-								<input id="hel-fire" type="text" name="hel-fire" />
-								<label for="hel-fire">Fire Resistance</label>
+								<input id="body-fire" type="number" name="body-fire" />
+								<label for="body-fire">Fire Resistance</label>
 								</div>
 								<div class="input-field">
-								<input id="hel-cold" type="text" name="hel-cold" />
-								<label for="hel-cold">Cold Resistance</label>
+								<input id="body-cold" type="number" name="body-cold" />
+								<label for="body-cold">Cold Resistance</label>
 								</div>
 								<div class="input-field">
-								<input id="hel-light" type="text" name="hel-fire" />
-								<label for="hel-light">Lightning Resistance</label>
+								<input id="body-light" type="number" name="body-light" />
+								<label for="body-light">Lightning Resistance</label>
 								</div>
 								<div class="input-field">
-								<input id="hel-chaos" type="text" name="hel-chaos" />
-								<label for="hel-chaos">Chaos Resistance</label>
+								<input id="body-chaos" type="number" name="body-chaos" />
+								<label for="body-chaos">Chaos Resistance</label>
 								</div>
 							</div>
 						</li>
 						<li>
-							<div class="collapsible-header">Boots</div>
+							<div class="collapsible-header">
+								<span class="badge purple"></span>
+								<span class="badge yellow"></span>
+								<span class="badge blue"></span>
+								<span class="badge red"></span>
+								Gloves
+							</div>
 							<div class="collapsible-body">
 								<div class="input-field">
-								<input id="hel-fire" type="text" name="hel-fire" />
-								<label for="hel-fire">Fire Resistance</label>
+								<input id="gloves-fire" type="number" name="gloves-fire" />
+								<label for="gloves-fire">Fire Resistance</label>
 								</div>
 								<div class="input-field">
-								<input id="hel-cold" type="text" name="hel-cold" />
-								<label for="hel-cold">Cold Resistance</label>
+								<input id="gloves-cold" type="number" name="gloves-cold" />
+								<label for="gloves-cold">Cold Resistance</label>
 								</div>
 								<div class="input-field">
-								<input id="hel-light" type="text" name="hel-fire" />
-								<label for="hel-light">Lightning Resistance</label>
+								<input id="gloves-light" type="number" name="gloves-light" />
+								<label for="gloves-light">Lightning Resistance</label>
 								</div>
 								<div class="input-field">
-								<input id="hel-chaos" type="text" name="hel-chaos" />
-								<label for="hel-chaos">Chaos Resistance</label>
+								<input id="gloves-chaos" type="number" name="gloves-chaos" />
+								<label for="gloves-chaos">Chaos Resistance</label>
 								</div>
 							</div>
 						</li>
 						<li>
-							<div class="collapsible-header">Amulet</div>
-							<div class="collapsible-body">
-								<input type="text" name="hel-fire" />
-								<input type="text" name="hel-cold" />
-								<input type="text" name="hel-ligh" />
-								<input type="text" name="hel-chao" />
+							<div class="collapsible-header">
+								<span class="badge purple"></span>
+								<span class="badge yellow"></span>
+								<span class="badge blue"></span>
+								<span class="badge red"></span>
+								Boots
 							</div>
-						</li>
-						<li>
-							<div class="collapsible-header">Ring(Left)</div>
 							<div class="collapsible-body">
 								<div class="input-field">
-								<input id="hel-fire" type="text" name="hel-fire" />
-								<label for="hel-fire">Fire Resistance</label>
+								<input id="boots-fire" type="number" name="boots-fire" />
+								<label for="boots-fire">Fire Resistance</label>
 								</div>
 								<div class="input-field">
-								<input id="hel-cold" type="text" name="hel-cold" />
-								<label for="hel-cold">Cold Resistance</label>
+								<input id="boots-cold" type="number" name="boots-cold" />
+								<label for="boots-cold">Cold Resistance</label>
 								</div>
 								<div class="input-field">
-								<input id="hel-light" type="text" name="hel-fire" />
-								<label for="hel-light">Lightning Resistance</label>
+								<input id="boots-light" type="number" name="boots-light" />
+								<label for="boots-light">Lightning Resistance</label>
 								</div>
 								<div class="input-field">
-								<input id="hel-chaos" type="text" name="hel-chaos" />
-								<label for="hel-chaos">Chaos Resistance</label>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="collapsible-header">Ring(Right)</div>
-							<div class="collapsible-body">
-								<div class="input-field">
-								<input id="hel-fire" type="text" name="hel-fire" />
-								<label for="hel-fire">Fire Resistance</label>
-								</div>
-								<div class="input-field">
-								<input id="hel-cold" type="text" name="hel-cold" />
-								<label for="hel-cold">Cold Resistance</label>
-								</div>
-								<div class="input-field">
-								<input id="hel-light" type="text" name="hel-fire" />
-								<label for="hel-light">Lightning Resistance</label>
-								</div>
-								<div class="input-field">
-								<input id="hel-chaos" type="text" name="hel-chaos" />
-								<label for="hel-chaos">Chaos Resistance</label>
+								<input id="boots-chaos" type="number" name="boots-chaos" />
+								<label for="boots-chaos">Chaos Resistance</label>
 								</div>
 							</div>
 						</li>
 						<li>
-							<div class="collapsible-header">Main Hand</div>
+							<div class="collapsible-header">
+								<span class="badge purple"></span>
+								<span class="badge yellow"></span>
+								<span class="badge blue"></span>
+								<span class="badge red"></span>
+								Amulet
+							</div>
 							<div class="collapsible-body">
 								<div class="input-field">
-								<input id="hel-fire" type="text" name="hel-fire" />
-								<label for="hel-fire">Fire Resistance</label>
+								<input id="amulet-fire" type="number" name="amulet-fire" />
+								<label for="amulet-fire">Fire Resistance</label>
 								</div>
 								<div class="input-field">
-								<input id="hel-cold" type="text" name="hel-cold" />
-								<label for="hel-cold">Cold Resistance</label>
+								<input id="amulet-cold" type="number" name="amulet-cold" />
+								<label for="amulet-cold">Cold Resistance</label>
 								</div>
 								<div class="input-field">
-								<input id="hel-light" type="text" name="hel-fire" />
-								<label for="hel-light">Lightning Resistance</label>
+								<input id="amulet-light" type="number" name="amulet-light" />
+								<label for="amulet-light">Lightning Resistance</label>
 								</div>
 								<div class="input-field">
-								<input id="hel-chaos" type="text" name="hel-chaos" />
-								<label for="hel-chaos">Chaos Resistance</label>
+								<input id="amulet-chaos" type="number" name="amulet-chaos" />
+								<label for="amulet-chaos">Chaos Resistance</label>
 								</div>
 							</div>
 						</li>
 						<li>
-							<div class="collapsible-header">Off Hand</div>
+							<div class="collapsible-header">
+								<span class="badge purple"></span>
+								<span class="badge yellow"></span>
+								<span class="badge blue"></span>
+								<span class="badge red"></span>
+								Ring(Left)
+							</div>
 							<div class="collapsible-body">
 								<div class="input-field">
-								<input id="hel-fire" type="text" name="hel-fire" />
-								<label for="hel-fire">Fire Resistance</label>
+								<input id="ringL-fire" type="number" name="ringL-fire" />
+								<label for="ringL-fire">Fire Resistance</label>
 								</div>
 								<div class="input-field">
-								<input id="hel-cold" type="text" name="hel-cold" />
-								<label for="hel-cold">Cold Resistance</label>
+								<input id="ringL-cold" type="number" name="ringL-cold" />
+								<label for="ringL-cold">Cold Resistance</label>
 								</div>
 								<div class="input-field">
-								<input id="hel-light" type="text" name="hel-fire" />
-								<label for="hel-light">Lightning Resistance</label>
+								<input id="ringL-light" type="number" name="ringL-light" />
+								<label for="ringL-light">Lightning Resistance</label>
 								</div>
 								<div class="input-field">
-								<input id="hel-chaos" type="text" name="hel-chaos" />
-								<label for="hel-chaos">Chaos Resistance</label>
+								<input id="ringL-chaos" type="number" name="ringL-chaos" />
+								<label for="ringL-chaos">Chaos Resistance</label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">
+								<span class="badge purple"></span>
+								<span class="badge yellow"></span>
+								<span class="badge blue"></span>
+								<span class="badge red"></span>
+								Ring(Right)
+							</div>
+							<div class="collapsible-body">
+								<div class="input-field">
+								<input id="ringR-fire" type="number" name="ringR-fire" />
+								<label for="ringR-fire">Fire Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="ringR-cold" type="number" name="ringR-cold" />
+								<label for="ringR-cold">Cold Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="ringR-light" type="number" name="ringR-light" />
+								<label for="ringR-light">Lightning Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="ringR-chaos" type="number" name="ringR-chaos" />
+								<label for="ringR-chaos">Chaos Resistance</label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">
+								<span class="badge purple"></span>
+								<span class="badge yellow"></span>
+								<span class="badge blue"></span>
+								<span class="badge red"></span>
+								Main Hand
+							</div>
+							<div class="collapsible-body">
+								<div class="input-field">
+								<input id="mhand-fire" type="number" name="mhand-fire" />
+								<label for="mhand-fire">Fire Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="mhand-cold" type="number" name="mhand-cold" />
+								<label for="mhand-cold">Cold Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="mhand-light" type="number" name="mhand-light" />
+								<label for="mhand-light">Lightning Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="mhand-chaos" type="number" name="mhand-chaos" />
+								<label for="mhand-chaos">Chaos Resistance</label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">
+								<span class="badge purple"></span>
+								<span class="badge yellow"></span>
+								<span class="badge blue"></span>
+								<span class="badge red"></span>
+								Off Hand
+							</div>
+							<div class="collapsible-body">
+								<div class="input-field">
+								<input id="ohand-fire" type="number" name="ohand-fire" />
+								<label for="ohand-fire">Fire Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="ohand-cold" type="number" name="ohand-cold" />
+								<label for="ohand-cold">Cold Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="ohand-light" type="number" name="ohand-light" />
+								<label for="ohand-light">Lightning Resistance</label>
+								</div>
+								<div class="input-field">
+								<input id="ohand-chaos" type="number" name="ohand-chaos" />
+								<label for="ohand-chaos">Chaos Resistance</label>
 								</div>
 							</div>
 						</li>
@@ -240,7 +303,11 @@
 							</div>
 						</li>
 						<li class="collection-item">Passives</li>
-						<li class="collection-item">Original</li>
+						<li class="collection-item">
+							Original
+							<div class="input-field">
+							</div>
+						</li>
 						<li class="collection-item">Merciless</li>
 						<li class="collection-item">
 							<div class="input-field">
@@ -287,6 +354,37 @@
 	$(document).ready( function() {
 		$('.collapsible').collapsible();
 	});
+</script>
+<script>
+	// global res
+	var color_map = { 'chaos':'purple', 'light':'yellow', 'cold':'blue', 'fire':'red'};
+
+	function bind_res_to_header( base, res) {
+		
+		var cur = document.querySelector( 'input[name="' + base + '-' + res +'"]');
+		var li_header = cur.parentElement.parentElement.previousElementSibling;
+		var badge = li_header.querySelector('span.badge.' + color_map[res]);
+
+		if( Number( cur.value) != 0) {
+			badge.style.display = "inline";
+			badge.innerHTML = cur.value.toString() + "%";
+		}
+		else 
+			badge.style.display = "none"
+	};
+
+	var ipt_ress = document.querySelectorAll( 'input[name$="-fire"],input[name$="-cold"],input[name$="-light"],input[name$="chaos"]');
+	var l = ipt_ress.length;
+	for( var i = 0; i < l; ++i) {
+		ipt_ress[i].oninput = function( e) {
+			bind_res_to_header( e.target.id.split('-')[0], e.target.id.split('-')[1]);
+		};
+	}
+	var badge = document.querySelectorAll( '.badge');
+	l = badge.length;
+	for( var i = 0; i < l; ++i)
+		badge[i].style.display = "none";
+
 </script>
 <!--
 <script>
