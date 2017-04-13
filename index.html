@@ -303,7 +303,13 @@
 							<input id="bandit" name="bandit_10" type="checkbox" />
 							<label for="bandit">Bandit Reward: +10% All Res.</label>
 						</li>
-						<li class="collection-item" style="display: none">Passives</li>
+						<li class="collection-item poeurl">
+							Passives
+							<span id="pass_chaos" class="badge purple">0%</span>
+							<span id="pass_light" class="badge yellow">0%</span>
+							<span id="pass_cold" class="badge blue">0%</span>
+							<span id="pass_fire" class="badge red">0%</span>
+						</li>
 						<li class="collection-item">
 							Original
 							<span id="total_chaos" class="badge purple">0%</span>
@@ -329,11 +335,11 @@
 							</div>
 						</li>
 					</ul>
-					<div class="input-field" style="display: none">
+					<div class="input-field poeurl">
 						<input id="character_url" type="text" name="ch_url" />
 						<label for="character_url">Apply your Character</label>
 					</div>
-					<div class="input-field" style="display: none">
+					<div class="input-field poeurl">
 						<input id="passive_url" type="text" name="sk_url" />
 						<label for="passive_url">Apply existed Passive tree</label>
 					</div>
@@ -368,13 +374,15 @@
 		$('.collapsible').collapsible();
 	});
 </script>
+<script type="text/javascript" src="260skTreeData.js"></script>
 <script>
 	// global res
 	var color_map = { 'chaos':'purple', 'light':'yellow', 'cold':'blue', 'fire':'red'};
 	var res_total = { 'fire': 0, 'cold': 0, 'light': 0, 'chaos': 0};
+	var res_cap = { 'fire': 75, 'cold': 75, 'light': 75, 'chaos': 75};
 
 	function bind_res_to_header( base, res) {
-		
+
 		var cur = document.querySelector( 'input[name="' + base + '-' + res +'"]');
 		var li_header = cur.parentElement.parentElement.previousElementSibling;
 		var badge = li_header.querySelector('span.badge.' + color_map[res]);
@@ -383,7 +391,7 @@
 			badge.style.display = "inline";
 			badge.innerHTML = cur.value.toString() + "%";
 		}
-		else 
+		else
 			badge.style.display = "none"
 	};
 
@@ -401,11 +409,19 @@
 			res_total[res] += Number( cur.value);
 		}
 		for( var i = 0; i < 4; ++i) {
-			document.querySelector( '#total_' + ress[i]).innerHTML = (b10 & ress[i] != "chaos" ? (res_total[ress[i]] + 10).toString() : res_total[ress[i]].toString()) + "%";
-			document.querySelector( '#merci_' + ress[i]).innerHTML = ( Number( document.querySelector( '#total_' + ress[i]).innerHTML.split('%')[0]) - 60).toString() + "%";
-			document.querySelector( '#elew_' + ress[i]).innerHTML = ress[i] != "chaos" ?
-				( Number( document.querySelector( '#merci_' + ress[i]).innerHTML.split('%')[0]) - ( 19 + elew)).toString() + "%" :
-				( Number( document.querySelector( '#merci_' + ress[i]).innerHTML.split('%')[0])).toString() + "%";
+			var res_t = res_total[ress[i]];
+			var out;
+			if( b10 && ( ress[i] != "chaos"))
+				res_t += 10;
+			out = res_t;
+			document.querySelector( '#total_' + ress[i]).innerHTML = out.toString() + "%";
+			// merciless
+			out = (res_t - 60) >= res_cap[ ress[i]] ? res_cap[ress[i]] : res_t - 60;
+			document.querySelector( '#merci_' + ress[i]).innerHTML = out.toString() + "%";
+			// elemantal weakness
+			if( ress[i] != "chaos")
+				out = res_t - 60 - ( 19 + elew) >= res_cap[ ress[i]] ? res_cap[ ress[i]] : res_t - 60 - ( 19 + elew);
+			document.querySelector( '#elew_' + ress[i]).innerHTML = out.toString() + "%";
 		}
 
 		return ;
@@ -432,6 +448,10 @@
 	elew.oninput= update_res;
 
 	update_res();
+	// not ready function
+	var h = document.querySelectorAll( '.poeurl');
+	for( var i = 0; i < h.length; ++i)
+		h[i].style.display = "none";
 </script>
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
